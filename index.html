@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界197か国タイピングクイズ</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="app">
+
+        <!-- タイトル画面 -->
+        <section id="title-screen">
+
+            <h1>🌍 世界197か国タイピングクイズ</h1>
+
+            <div id="mode-select">
+
+                <button class="mode-btn" data-time="300">5分</button>
+                <button class="mode-btn" data-time="600">10分</button>
+                <button class="mode-btn" data-time="1200">20分</button>
+                <button class="mode-btn" data-time="1800">30分</button>
+                <button class="mode-btn" data-time="-1">無制限</button>
+
+            </div>
+
+            <button id="start-button">
+                スタート
+            </button>
+
+        </section>
+
+        <!-- ゲーム画面 -->
+        <section id="game-screen" hidden>
+
+            <header>
+
+                <div id="timer">
+                    05:00
+                </div>
+
+                <div id="score">
+                    0 / 197
+                </div>
+
+            </header>
+
+            <div id="answered-list">
+
+            </div>
+
+            <div id="input-area">
+
+                <input
+                    id="country-input"
+                    type="text"
+                    placeholder="国名を入力"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                >
+
+            </div>
+
+        </section>
+
+        <!-- 結果画面 -->
+        <section id="result-screen" hidden>
+
+            <h2>結果</h2>
+
+            <p id="result-text">
+                0 / 197
+            </p>
+
+            <button id="retry-button">
+                もう一度遊ぶ
+            </button>
+
+        </section>
+
+    </div>
+
+    <script src="js/countries.js"></script>
+    <script src="js/aliases.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
