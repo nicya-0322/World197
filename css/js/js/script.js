@@ -83,7 +83,7 @@ function startGame(){
 
     answeredList.innerHTML = "";
 
-    score.textContent = "0 / 197";
+    score.textContent = "0 / " + countries.length;
 
     remainingTime = selectedTime;
 
@@ -154,13 +154,48 @@ input.addEventListener("keydown", function(e){
    回答追加
 ========================== */
 
-function addAnswer(country){
+function addAnswer(inputCountry){
 
-    if(answeredCountries.includes(country)){
+    let countryName = inputCountry;
+
+    // 別名を正式名称へ変換
+    if(aliases[countryName]){
+
+        countryName = aliases[countryName];
+
+    }
+
+    // 国データを検索
+    const country = countries.find(c => c.name === countryName);
+
+    // 存在しない国
+    if(!country){
 
         return;
 
     }
+
+    // 重複チェック
+    if(answeredCountries.includes(country.name)){
+
+        return;
+
+    }
+
+    answeredCountries.push(country.name);
+
+    const item = document.createElement("div");
+
+    item.textContent = country.name;
+
+    answeredList.appendChild(item);
+
+    score.textContent =
+        answeredCountries.length +
+        " / " +
+        countries.length;
+
+}
 
     answeredCountries.push(country);
 
