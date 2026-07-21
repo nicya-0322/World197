@@ -1,0 +1,270 @@
+/* ==========================================
+   世界197か国タイピングクイズ
+   style.css
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg:#121212;
+    --bg2:#1d1d1d;
+    --card:#242424;
+    --accent:#4cafef;
+    --text:#ffffff;
+    --sub:#bdbdbd;
+    --success:#4caf50;
+    --danger:#f44336;
+    --border:#3d3d3d;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+}
+
+#app{
+
+    width:min(900px,95%);
+    margin:auto;
+
+}
+
+/* =====================
+   共通
+===================== */
+
+button{
+
+    cursor:pointer;
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--accent);
+
+    color:white;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    transform:scale(1.03);
+
+}
+
+section{
+
+    min-height:100vh;
+
+    padding:30px 20px;
+
+}
+
+/* =====================
+ タイトル
+===================== */
+
+#title-screen{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+#title-screen h1{
+
+    font-size:2rem;
+
+    text-align:center;
+
+}
+
+#mode-select{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+    width:100%;
+
+}
+
+.mode-btn{
+
+    padding:18px;
+
+    font-size:18px;
+
+}
+
+#start-button{
+
+    width:100%;
+
+    padding:18px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+/* =====================
+ ゲーム画面
+===================== */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+#timer{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+#score{
+
+    font-size:24px;
+
+}
+
+#answered-list{
+
+    background:var(--bg2);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    min-height:420px;
+
+    padding:15px;
+
+    overflow:auto;
+
+}
+
+/* =====================
+ 入力欄
+===================== */
+
+#input-area{
+
+    position:sticky;
+
+    bottom:0;
+
+    margin-top:20px;
+
+    background:var(--bg);
+
+    padding-top:15px;
+
+}
+
+#country-input{
+
+    width:100%;
+
+    padding:18px;
+
+    font-size:20px;
+
+    border-radius:12px;
+
+    border:2px solid var(--border);
+
+    background:var(--card);
+
+    color:white;
+
+}
+
+#country-input:focus{
+
+    outline:none;
+
+    border-color:var(--accent);
+
+}
+
+/* =====================
+ 結果画面
+===================== */
+
+#result-screen{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+#result-text{
+
+    font-size:28px;
+
+}
+
+/* =====================
+ スマホ
+===================== */
+
+@media(max-width:700px){
+
+    #mode-select{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #title-screen h1{
+
+        font-size:1.6rem;
+
+    }
+
+    #timer{
+
+        font-size:22px;
+
+    }
+
+    #score{
+
+        font-size:20px;
+
+    }
+
+}
