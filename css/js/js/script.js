@@ -196,17 +196,3 @@ function addAnswer(inputCountry){
         countries.length;
 
 }
-
-    answeredCountries.push(country);
-
-    const item = document.createElement("div");
-
-    item.textContent = country;
-
-    answeredList.appendChild(item);
-
-    score.textContent =
-        answeredCountries.length
-        + " / 197";
-
-}
